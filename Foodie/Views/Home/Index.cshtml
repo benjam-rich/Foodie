@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Top 5 Restaurants in Provo";
+}
+
+@model IEnumerable<string>
+
+<!--This is the home page. It displays the top 5 restaurants picked by your truly.
+    It also has navigation (as do all the pages) and a button to allow users to add their own suggested restaurants-->
+<div class="list-group">
+    <ul>
+        @foreach (string i in Model)
+        {
+            <li class="list-group-item">@i</li>
+        }
+    </ul>
+</div>
+    <br />
+    <div class="text-center">
+        <img src="~/food.jpg" class="rounded" /><br /> <br />
+        <a class="btn btn-primary" asp-action="AddRest">Suggest Great Restaurants</a>
+    </div>
