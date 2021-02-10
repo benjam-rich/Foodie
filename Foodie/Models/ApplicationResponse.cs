@@ -16,7 +16,8 @@ namespace Foodie.Models
         public string RName { get; set; }
         [Required]
         public string FDish { get; set; }
-        [Required] [Phone]
+        //The regular expression requires phone input in this format ###-###-#### or  ##########
+        [Required] [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string PNumber { get; set; }
     }
 }
